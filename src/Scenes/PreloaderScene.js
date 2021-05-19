@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import '../assets/TownTheme.mp3';
-
+import bg_music from '../assets/TownTheme.mp3';
 
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -93,14 +93,14 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('phaserLogo', logo);
     this.load.image('box', box);
     this.load.image('checkedBox', checkedBox); 
-    this.load.audio('bgMusic', ['../assets/TownTheme.mp3']);
+    this.load.audio('bgMusic', [bg_music]);
   }
 
   ready () {
-    // this.readyCount++;
-    // if (this.readyCount === 2) {
-    this.scene.start('Options');
-    // }
+    this.readyCount++;
+    if (this.readyCount === 2) {
+    this.scene.start('Title');
+    }
   }
   
   create () {
