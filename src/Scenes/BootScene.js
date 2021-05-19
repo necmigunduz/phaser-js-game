@@ -1,4 +1,5 @@
 import 'phaser';
+import logo from '../assets/logo_peacemaker.png';
  
 export default class BootScene extends Phaser.Scene {
   constructor () {
@@ -6,10 +7,10 @@ export default class BootScene extends Phaser.Scene {
   }
  
   preload () {
-    this.load.image('logo', sm-logo);
+    this.load.image('logo', logo);
   }
  
   create () {
-      this.start('Preloader');
+      this.scene.start('Preloader');
   }
 };
