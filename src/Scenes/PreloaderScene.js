@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import '../assets/TownTheme.mp3';
-import bg_music from '../assets/TownTheme.mp3';
+import bg_music from '../assets/bg-music.mp3';
 
 
 export default class PreloaderScene extends Phaser.Scene {
