@@ -4,8 +4,18 @@ import button03 from '../assets/ui/blue_button03.png';
 import logo from '../assets/logo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
-import '../assets/TownTheme.mp3';
 import bg_music from '../assets/bg-music.mp3';
+import explosion_sound from '../assets/explosion.mp3';
+import bg_space from '../assets/bg_space.png';
+import ship from '../assets/ship.png';
+import enemy from '../assets/enemy.png';
+import enemy1 from '../assets/enemy1.png';
+import enemy2 from '../assets/enemy2.png';
+import explosion from '../assets/explosion.png';
+import laser from '../assets/laser.png';
+import restart from '../assets/restart.png';
+import restartDown from '../assets/restartDown.png';
+import restartHover from '../assets/restartHover.png';
 
 
 export default class PreloaderScene extends Phaser.Scene {
@@ -19,7 +29,7 @@ export default class PreloaderScene extends Phaser.Scene {
  
   preload () {
     // add logo image
-    this.add.image(400, 200, 'logo');
+    this.add.image(400, 300, 'logo');
    
     // display progress bar
     var progressBar = this.add.graphics();
@@ -94,6 +104,20 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', box);
     this.load.image('checkedBox', checkedBox); 
     this.load.audio('bgMusic', [bg_music]);
+    this.load.image('bg_space', bg_space);
+    this.load.image('ship', ship);
+    this.load.image('enemy', enemy);
+    this.load.image('enemy1', enemy1);
+    this.load.image('enemy2', enemy2);
+    this.load.image('laser', laser);
+    this.load.image('restart', restart);
+    this.load.image('restartDown', restartDown);
+    this.load.image('restartHover', restartHover);
+    this.load.spritesheet('explosion', explosion, {
+      frameWidth: 64,
+      frameHeight: 64
+    });
+    this.load.audio('explosion_sound', explosion_sound);
   }
 
   ready () {
