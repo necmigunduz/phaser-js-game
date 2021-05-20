@@ -43,6 +43,11 @@ class Player extends Entity {
   }
 }
 
+class ChaserShip extends Entity {
+  constructor(scene, x, y) {
+    super(scene, x, y, "enemy", "ChaserShip");
+    this.body.velocity.y = Phaser.Math.Between(50, 100);
+  }
+}
 
-
-export { Player };
+export { Player, ChaserShip };

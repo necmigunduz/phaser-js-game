@@ -1,6 +1,5 @@
 import 'phaser';
-import bg_space from '../assets/bg_space.png';
-import { Player } from './Entities';
+import { Player, ChaserShip } from './Entities';
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
@@ -8,8 +7,6 @@ export default class GameScene extends Phaser.Scene {
   }
  
   preload () {
-    // load images
-    this.load.image('bg_space', bg_space);
   }
  
   create () {
@@ -21,6 +18,13 @@ export default class GameScene extends Phaser.Scene {
       this.game.config.height * 0.5,
       "ship"
     ); 
+    
+    this.enemy1 = new ChaserShip(
+      this,
+      this.game.config.width * 0.5,
+      this.game.config.height * 0.0,
+      "enemy"
+    );
 
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -29,8 +33,23 @@ export default class GameScene extends Phaser.Scene {
     this.keySpace = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
     this.enemies = this.add.group();
-    this.enemyLasers = this.add.group();
-    this.playerLasers = this.add.group();
+
+    this.time.addEvent({
+      delay: 100,
+      callback: function() {
+        var enemy = new ChaserShip(
+          this,
+          Phaser.Math.Between(0, this.game.config.width),
+          0
+        );
+
+        this.enemies.add(enemy);
+      },
+      callbackScope: this,
+      loop: true
+    });
+
+    
   }
 
   update() {
