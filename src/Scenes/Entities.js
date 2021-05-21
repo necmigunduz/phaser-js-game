@@ -123,8 +123,52 @@ class ChaserShip extends Entity {
       else {
         this.angle += 5;
       } 
+
+      if (enemy.x < -enemy.displayWidth ||
+        enemy.x > this.game.config.width + enemy.displayWidth ||
+        enemy.y < -enemy.displayHeight * 4 ||
+        enemy.y > this.game.config.height + enemy.displayHeight) {
+        if (enemy) {
+          if (enemy.onDestroy !== undefined) {
+            enemy.onDestroy();
+          }
+    
+          enemy.destroy();
+        }
+      }
+
+      for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
+        var laser = this.enemyLasers.getChildren()[i];
+        laser.update();
+  
+        if (laser.x < -laser.displayWidth ||
+          laser.x > this.game.config.width + laser.displayWidth ||
+          laser.y < -laser.displayHeight * 4 ||
+          laser.y > this.game.config.height + laser.displayHeight) {
+          if (laser) {
+            laser.destroy();
+          }
+        }
+      }
+  
+      for (var i = 0; i < this.playerLasers.getChildren().length; i++) {
+        var laser = this.playerLasers.getChildren()[i];
+        laser.update();
+  
+        if (laser.x < -laser.displayWidth ||
+          laser.x > this.game.config.width + laser.displayWidth ||
+          laser.y < -laser.displayHeight * 4 ||
+          laser.y > this.game.config.height + laser.displayHeight) {
+          if (laser) {
+            laser.destroy();
+          }
+        }
+      }
     }
   };
+
+  
+  
 }
 
 class CarrierShip extends Entity {
