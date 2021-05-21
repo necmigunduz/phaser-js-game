@@ -12,7 +12,6 @@ import enemy from '../assets/enemy.png';
 import enemy1 from '../assets/enemy1.png';
 import enemy2 from '../assets/enemy2.png';
 import enemy3 from  '../assets/enemy3.png';
-import explosion from '../assets/explosion.png';
 import laserShooter from '../assets/laser.png';
 import restart from '../assets/restart.png';
 import restartDown from '../assets/restartDown.png';
@@ -115,9 +114,9 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('restart', restart);
     this.load.image('restartDown', restartDown);
     this.load.image('restartHover', restartHover);
-    this.load.spritesheet('explosion', explosion, {
-      frameWidth: 64,
-      frameHeight: 64
+    this.load.spritesheet('explosion', '../src/assets/explosion.png', {
+      frameWidth: 32,
+      frameHeight: 32,
     });
     this.load.audio('explosion_sound', explosion_sound);
   }

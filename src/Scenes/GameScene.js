@@ -18,6 +18,13 @@ export default class GameScene extends Phaser.Scene {
       this.game.config.height * 0.5,
       "ship"
     ); 
+
+    this.anims.create({
+      key: "explosion",
+      frames: this.anims.generateFrameNumbers("explosion"),
+      frameRate: 20,
+      repeat: 0
+    });
     
     this.keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     this.keyS = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
@@ -29,7 +36,7 @@ export default class GameScene extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
-    this.time.addEvent({
+    this.time.addEvent({  
       delay: 6000,
       callback: function() {
 
@@ -158,6 +165,13 @@ export default class GameScene extends Phaser.Scene {
         enemy.explode(true);
       }
     });
+
+    this.sfx = {
+      explosions: [
+        this.sound.add('explosion_sound'),
+      ],
+      laser: this.sound.add('explosion_sound'),
+    };
   }
 
   update() {
