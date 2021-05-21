@@ -1,5 +1,5 @@
 import 'phaser';
-import { Player, ChaserShip, CarrierShip, GunShip, HollowShip } from './Entities';
+import { Player, ChaserShip, CarrierShip, GunShip, HollowShip, ScrollingBackground } from './Entities';
 
 export default class GameScene extends Phaser.Scene {
   constructor () {
@@ -11,6 +11,19 @@ export default class GameScene extends Phaser.Scene {
  
   create () {
     this.add.image(400, 300, 'bg_space');
+
+    this.sfx = {
+      explosions: [
+        this.sound.add('explosion_sound'),
+      ],
+      laser: this.sound.add('explosion_sound'),
+    };
+
+    this.backgrounds = [];
+    for (var i = 0; i < 5; i++) { // create five scrolling backgrounds
+      var bg = new ScrollingBackground(this, "space_bg", i * 10);
+      this.backgrounds.push(bg);
+    };
 
     this.player = new Player(
       this,
@@ -112,7 +125,7 @@ export default class GameScene extends Phaser.Scene {
         else if (Phaser.Math.Between(0, 10) >= 8) {
           if (this.getEnemiesByType("CarrierShip").length < 5) {
     
-            enemy = new ChaserShip(
+            enemy = new CarrierShip(
               this,
               Phaser.Math.Between(0, this.game.config.width),
               0
@@ -164,14 +177,7 @@ export default class GameScene extends Phaser.Scene {
         player.explode(false);
         enemy.explode(true);
       }
-    });
-
-    this.sfx = {
-      explosions: [
-        this.sound.add('explosion_sound'),
-      ],
-      laser: this.sound.add('explosion_sound'),
-    };
+    });    
   }
 
   update() {

@@ -7,6 +7,7 @@ import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import bg_music from '../assets/bg-music.mp3';
 import explosion_sound from '../assets/explosion.mp3';
 import bg_space from '../assets/bg_space.png';
+import sprBg0 from '../assets/sprBg0.png';
 import ship from '../assets/ship.png';
 import enemy from '../assets/enemy.png';
 import enemy1 from '../assets/enemy1.png';
@@ -105,6 +106,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('checkedBox', checkedBox); 
     this.load.audio('bgMusic', [bg_music]);
     this.load.image('bg_space', bg_space);
+    this.load.image('sprBg0.png', sprBg0);
     this.load.image('ship', ship);
     this.load.image('enemy', enemy);
     this.load.image('enemy1', enemy1);
