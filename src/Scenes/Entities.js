@@ -86,6 +86,7 @@ class Player extends Entity {
         this.scene.playerLasers.add(laser);
       
         // this.scene.sfx.laser.play(); // play the laser sound effect
+        this.scene.sound.play('explosion_sound');
         this.setData("timerShootTick", 0);
       }
     }
@@ -408,4 +409,11 @@ class PlayerLaser extends Entity {
   }
 }
 
-export { Player, ChaserShip, CarrierShip, GunShip, HollowShip, EnemyLaser, PlayerLaser };
+class ScrollingBackground {
+  constructor(scene, key, velocityY) {
+    
+  }
+}
+
+
+export { Player, ChaserShip, CarrierShip, GunShip, HollowShip, EnemyLaser, PlayerLaser, ScrollingBackground };
