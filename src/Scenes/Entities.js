@@ -50,4 +50,24 @@ class ChaserShip extends Entity {
   }
 }
 
-export { Player, ChaserShip };
+class CarrierShip extends Entity {
+  constructor(scene, x, y) {
+    super(scene, x, y, "enemy1", "CarrierShip");
+    this.body.velocity.y = Phaser.Math.Between(50, 100);
+  }
+}
+
+class GunShip extends Entity {
+  constructor(scene, x, y) {
+    super(scene, x, y, "enemy2", GunShip);
+    this.body.velocity.y = Phaser.Math.Between(50, 100);
+  }
+}
+
+class HollowShip extends Entity {
+  constructor(scene, x, y) {
+    super(scene, x, y, "enemy3", "HollowShip");
+    this.body.velocity.y = Phaser.Math.Between(50, 100);
+  }
+}
+export { Player, ChaserShip, CarrierShip, GunShip, HollowShip };

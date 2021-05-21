@@ -11,6 +11,7 @@ import ship from '../assets/ship.png';
 import enemy from '../assets/enemy.png';
 import enemy1 from '../assets/enemy1.png';
 import enemy2 from '../assets/enemy2.png';
+import enemy3 from  '../assets/enemy3.png';
 import explosion from '../assets/explosion.png';
 import laser from '../assets/laser.png';
 import restart from '../assets/restart.png';
@@ -109,6 +110,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('enemy', enemy);
     this.load.image('enemy1', enemy1);
     this.load.image('enemy2', enemy2);
+    this.load.image('enemy3', enemy3);
     this.load.image('laser', laser);
     this.load.image('restart', restart);
     this.load.image('restartDown', restartDown);
