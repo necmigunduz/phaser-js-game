@@ -89,6 +89,17 @@ class Player extends Entity {
       }
     }
   }
+
+  onDestroy() {
+    this.scene.time.addEvent({ // go to game over scene
+      delay: 1000,
+      callback: function() {
+        this.scene.scene.start("SceneGameOver");
+      },
+      callbackScope: this,
+      loop: false
+    });
+  }
 }
 
 class ChaserShip extends Entity {
@@ -430,7 +441,17 @@ class ScrollingBackground {
       this.layers.add(layer);
     }
   }
+
+  update = () => {
+    if (this.layers.getChildren()[0].y > 0) {
+      for (var i = 0; i < this.layers.getChildren().length; i++) {
+        var layer = this.layers.getChildren()[i];
+        layer.y = (-layer.displayHeight) + (layer.displayHeight * i);
+      }
+    }
+  }
 }
+
 
 
 

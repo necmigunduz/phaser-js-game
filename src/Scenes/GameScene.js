@@ -21,7 +21,7 @@ export default class GameScene extends Phaser.Scene {
 
     this.backgrounds = [];
     for (var i = 0; i < 5; i++) { // create five scrolling backgrounds
-      var bg = new ScrollingBackground(this, "space_bg", i * 10);
+      var bg = new ScrollingBackground(this, "sprBg0", i * 10);
       this.backgrounds.push(bg);
     };
 
@@ -49,7 +49,7 @@ export default class GameScene extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
-    this.time.addEvent({  Chaser
+    this.time.addEvent({  
       delay: 6000,
       callback: function() {
 
@@ -183,30 +183,6 @@ export default class GameScene extends Phaser.Scene {
   update() {
     this.player.update();
 
-    // if (!this.player.getData("isDead")) {
-    //   this.player.update();
-    //   if (this.keyW.isDown) {
-    //     this.player.moveUp();
-    //   }
-    //   else if (this.keyS.isDown) {
-    //     this.player.moveDown();
-    //   }
-    //   if (this.keyA.isDown) {
-    //     this.player.moveLeft();
-    //   }
-    //   else if (this.keyD.isDown) {
-    //     this.player.moveRight();
-    //   }
-    
-    //   if (this.keySpace.isDown) {
-    //     this.player.setData("isShooting", true);
-    //   }
-    //   else {
-    //     this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
-    //     this.player.setData("isShooting", false);
-    //   }
-    // }
-
     if (this.keyW.isDown) {
       this.player.moveUp();
     }
@@ -227,6 +203,10 @@ export default class GameScene extends Phaser.Scene {
     else {
       this.player.setData("timerShootTick", this.player.getData("timerShootDelay") - 1);
       this.player.setData("isShooting", false);
+    }
+
+    for (var i = 0; i < this.backgrounds.length; i++) {
+      this.backgrounds[i].update();
     }
   }
 
