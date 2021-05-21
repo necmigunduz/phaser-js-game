@@ -49,7 +49,7 @@ export default class GameScene extends Phaser.Scene {
     this.enemyLasers = this.add.group();
     this.playerLasers = this.add.group();
 
-    this.time.addEvent({  
+    this.time.addEvent({  Chaser
       delay: 6000,
       callback: function() {
 
@@ -75,7 +75,7 @@ export default class GameScene extends Phaser.Scene {
         else if (Phaser.Math.Between(0, 10) >= 8) {
           if (this.getEnemiesByType("CarrierShip").length < 5) {
     
-            enemy = new ChaserShip(
+            enemy = new CarrierShip(
               this,
               Phaser.Math.Between(0, this.game.config.width),
               0
