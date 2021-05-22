@@ -92,9 +92,9 @@ class Player extends Entity {
 
   onDestroy() {
     this.scene.time.addEvent({ // go to game over scene
-      delay: 1000,
+      delay: 500,
       callback: function() {
-        this.scene.scene.start("SceneGameOver");
+        this.scene.scene.start('GameOver');
       },
       callbackScope: this,
       loop: false
@@ -173,10 +173,11 @@ class ChaserShip extends Entity {
         enemy.y > this.game.config.height + enemy.displayHeight) {
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
-            enemy.onDestroy();
+            // enemy.onDestroy();
+            enemy.explode();
           }
     
-          enemy.destroy();
+         // enemy.destroy();
         }
       }
 
@@ -427,7 +428,7 @@ class ScrollingBackground {
     this.createLayers();
   }
 
-  createLayers = () => {
+  createLayers = function() {
     for (var i = 0; i < 2; i++) {
       var layer = this.scene.add.sprite(0, 0, this.key);
       layer.y = (layer.displayHeight * i);

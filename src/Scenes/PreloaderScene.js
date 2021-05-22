@@ -16,10 +16,9 @@ import enemy1 from '../assets/enemy1.png';
 import enemy2 from '../assets/enemy2.png';
 import enemy3 from  '../assets/enemy3.png';
 import laserShooter from '../assets/laser.png';
-import restart from '../assets/restart.png';
-import restartDown from '../assets/restartDown.png';
-import restartHover from '../assets/restartHover.png';
-
+import sprBtnRestart from '../assets/sprBtnRestart.png';
+import sprBtnRestartDown from '../assets/sprBtnRestartDown.png';
+import sprBtnRestartHover from '../assets/sprBtnRestartHover.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor () {
@@ -110,16 +109,16 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.audio('sndBtnOver', [sndBtnOver]);
     this.load.audio('sndBtnDown', [sndBtnDown]);
     this.load.image('bg_space', bg_space);
-    this.load.image('sprBg0.png', sprBg0);
+    this.load.image('sprBg0', sprBg0);
     this.load.image('ship', ship);
     this.load.image('enemy', enemy);
     this.load.image('enemy1', enemy1);
     this.load.image('enemy2', enemy2);
     this.load.image('enemy3', enemy3);
     this.load.image('laserShooter', laserShooter);
-    this.load.image('restart', restart);
-    this.load.image('restartDown', restartDown);
-    this.load.image('restartHover', restartHover);
+    this.load.image('sprBtnRestart', sprBtnRestart);
+    this.load.image('sprBtnRestartDown', sprBtnRestartDown);
+    this.load.image('sprBtnRestartHover', sprBtnRestartHover);
     this.load.spritesheet('explosion', '../src/assets/explosion.png', {
       frameWidth: 32,
       frameHeight: 32,
@@ -130,7 +129,7 @@ export default class PreloaderScene extends Phaser.Scene {
   ready () {
     this.readyCount++;
     if (this.readyCount === 2) {
-    this.scene.start('Title');
+    this.scene.start('GameOver');
     }
   }
   

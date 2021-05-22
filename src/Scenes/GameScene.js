@@ -167,7 +167,7 @@ export default class GameScene extends Phaser.Scene {
         }
       
         player.explode(true);
-        enemyLaser.destroy();
+        enemyLaser.onDestroy();
       }
     });
 
@@ -176,6 +176,7 @@ export default class GameScene extends Phaser.Scene {
           !enemy.getData("isDead")) {
         player.explode(false);
         enemy.explode(true);
+        player.onDestroy();
       }
     });    
   }
