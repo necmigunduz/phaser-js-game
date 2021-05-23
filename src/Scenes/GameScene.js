@@ -42,7 +42,7 @@ export default class GameScene extends Phaser.Scene {
     this.anims.create({
       key: "explosion",
       frames: this.anims.generateFrameNumbers("explosion"),
-      frameRate: 20,
+      frameRate: 16,
       repeat: 0
     });
     
