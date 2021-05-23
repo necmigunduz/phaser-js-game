@@ -129,7 +129,7 @@ export default class PreloaderScene extends Phaser.Scene {
   ready () {
     this.readyCount++;
     if (this.readyCount === 2) {
-    this.scene.start('GameOver');
+    this.scene.start('Title');
     }
   }
   

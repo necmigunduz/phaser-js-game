@@ -8,7 +8,7 @@ export default class GameScene extends Phaser.Scene {
  
   preload () {
   }
- 
+  
   create () {
     this.add.image(400, 300, 'bg_space');
 
@@ -31,6 +31,16 @@ export default class GameScene extends Phaser.Scene {
       this.game.config.height * 0.5,
       "ship"
     ); 
+
+    
+
+
+    this.yourScore = this.add.text(40, 520, 'Score: 0', {
+      fontFamily: 'monospace',
+      fontSize: 20,
+      fontStyle: 'bold',
+      color: '#ffffff',
+    });
 
     this.anims.create({
       key: "explosion",
@@ -151,12 +161,12 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
       if (enemy) {
-        if (enemy.onDestroy !== undefined) {
-          enemy.onDestroy();
-        }
-      
+        this.player.updateScore(enemy);
         enemy.explode(true);
+        enemy.body = null;
         playerLaser.destroy();
+        this.yourScore.setText(`Score: ${this.player.getData('score')}`);
+        this.player.updateScoretoLocal(this.player.getData('score'));
       }
     });
 

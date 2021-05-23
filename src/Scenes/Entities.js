@@ -1,4 +1,5 @@
 import 'phaser';
+import setScoreToStore from '../localStorage';
 
 class Entity extends Phaser.GameObjects.Sprite {
   constructor (scene, x, y, key, type) {
@@ -9,6 +10,7 @@ class Entity extends Phaser.GameObjects.Sprite {
     this.scene.physics.world.enableBody(this, 0);
     this.setData("type", type);
     this.setData("isDead", false);
+    this.setData('score', 0);
   }
   
   explode = function(canDestroy){
@@ -52,6 +54,7 @@ class Player extends Entity {
     this.setData("isShooting", false);
     this.setData("timerShootDelay", 10);
     this.setData("timerShootTick", this.getData("timerShootDelay") - 1);
+    this.score = 0;
   }
 
   moveUp() {
@@ -68,6 +71,24 @@ class Player extends Entity {
   
   moveRight() {
     this.body.velocity.x = this.getData("speed");
+  }
+
+  
+
+  updateScore(enemy) {
+    if (enemy.getData('type') === 'CarrierShip') {
+      this.setData('score', this.score + 25);
+    } else if (enemy.getData('type') === 'GunShip') {
+      this.setData('score', this.score + 15);
+    } else if (enemy.getData('type') === 'ChaserShip') {
+      this.setData('score', this.score + 10);
+    } else {
+      this.setData('score', this.score + 5);
+    }
+  }
+
+  updateScoretoLocal() {
+    setScoreToStore(this.getData('score'));
   }
 
   update() {

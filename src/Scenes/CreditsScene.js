@@ -12,6 +12,7 @@ export default class CreditsScene extends Phaser.Scene {
   create () {
     this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
     this.madeByText = this.add.text(0, 0, 'Created By: Necmi GUNDUZ', { fontSize: '26px', fill: '#fff' });
+    this.mcText = this.add.text(0, 0, 'Thanks to Microverse', { fontSize: '26px', fill: '#fff' });
     
     this.zone = this.add.zone(config.width/2, config.height/2, config.width, config.height);
 
@@ -24,8 +25,15 @@ export default class CreditsScene extends Phaser.Scene {
       this.madeByText,
       this.zone
     );
+    
+    Phaser.Display.Align.In.Center(
+      this.mcText,
+      this.zone
+    );
 
-    this.madeByText.setY(1000);
+    this.madeByText.setY(600);
+
+    this.mcText.setY(900);
 
     this.creditsTween = this.tweens.add({
       targets: this.creditsText,
@@ -40,6 +48,18 @@ export default class CreditsScene extends Phaser.Scene {
      
     this.madeByTween = this.tweens.add({
       targets: this.madeByText,
+      y: -300,
+      ease: 'Power1',
+      duration: 5000,
+      delay: 1000,
+      onComplete: function () {
+        this.madeByTween.destroy;
+        this.scene.start('Title');
+      }.bind(this)
+    });
+
+    this.madeByTween = this.tweens.add({
+      targets: this.mcText,
       y: -300,
       ease: 'Power1',
       duration: 5000,
