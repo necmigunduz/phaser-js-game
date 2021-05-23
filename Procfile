@@ -1,0 +1,1 @@
+web: npx webpack serve --config webpack/prod.js --open --port $PORT --host 0.0.0.0 --disable-host-check
