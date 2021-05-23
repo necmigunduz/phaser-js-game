@@ -13,7 +13,7 @@ class Entity extends Phaser.GameObjects.Sprite {
     this.setData('score', 0);
   }
   
-  explode = function(canDestroy){
+  explode(canDestroy){
     if (!this.getData("isDead")) {
       
       this.setTexture("explosion");  
