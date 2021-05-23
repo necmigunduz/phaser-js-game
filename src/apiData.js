@@ -48,7 +48,9 @@ async function getData() {
     });
     if (response.ok) {
       const jsonResponse = await response.json();
-      return sortPlayers(jsonResponse.result);
+      const sorteds = sortPlayers(jsonResponse.result)
+     
+      return sorteds;
     }
     throw new Error('Request Failed!');
   } catch (error) {

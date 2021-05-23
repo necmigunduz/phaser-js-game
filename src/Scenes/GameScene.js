@@ -32,9 +32,6 @@ export default class GameScene extends Phaser.Scene {
       "ship"
     ); 
 
-    
-
-
     this.yourScore = this.add.text(40, 520, 'Score: 0', {
       fontFamily: 'monospace',
       fontSize: 20,
@@ -159,14 +156,17 @@ export default class GameScene extends Phaser.Scene {
       loop: true
     });  
 
+    const p = this.player;
+    const s = this.yourScore;
+
     this.physics.add.collider(this.playerLasers, this.enemies, function(playerLaser, enemy) {
       if (enemy) {
-        this.player.updateScore(enemy);
+        p.updateScore(enemy);
         enemy.explode(true);
         enemy.body = null;
         playerLaser.destroy();
-        this.yourScore.setText(`Score: ${this.player.getData('score')}`);
-        this.player.updateScoretoLocal(this.player.getData('score'));
+        s.setText(`Score: ${p.getData('score')}`);
+        p.updateScoretoLocal(p.getData('score'));
       }
     });
 
@@ -177,7 +177,7 @@ export default class GameScene extends Phaser.Scene {
         }
       
         player.explode(true);
-        enemyLaser.explode(true);
+        // enemyLaser.explode(true);
       }
     });
 

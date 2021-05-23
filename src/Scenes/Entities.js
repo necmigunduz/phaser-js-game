@@ -77,13 +77,13 @@ class Player extends Entity {
 
   updateScore(enemy) {
     if (enemy.getData('type') === 'CarrierShip') {
-      this.setData('score', this.score + 25);
+      this.setData('score', this.getData('score') + 25);
     } else if (enemy.getData('type') === 'GunShip') {
-      this.setData('score', this.score + 15);
+      this.setData('score', this.getData('score') + 15);
     } else if (enemy.getData('type') === 'ChaserShip') {
-      this.setData('score', this.score + 10);
+      this.setData('score', this.getData('score') + 10);
     } else {
-      this.setData('score', this.score + 5);
+      this.setData('score', this.getData('score') + 5);
     }
   }
 
