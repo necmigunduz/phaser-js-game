@@ -148,7 +148,7 @@ class ChaserShip extends Entity {
     this.state = this.states.MOVE_DOWN;
   };
 
-  onDestroy = function(){
+  onDestroy(){
     if (this.shootTimer !== undefined) {
       if (this.shootTimer) {
         this.shootTimer.remove(false);
@@ -156,7 +156,7 @@ class ChaserShip extends Entity {
     }
   };
 
-  update = function(){
+  update(){
     if (!this.getData("isDead") && this.scene.player) {
       if (Phaser.Math.Distance.Between(
         this.x,
@@ -255,7 +255,7 @@ class CarrierShip extends Entity {
     this.state = this.states.MOVE_DOWN;
   };
 
-  onDestroy = function(){
+  onDestroy(){
     if (this.shootTimer !== undefined) {
       if (this.shootTimer) {
         this.shootTimer.remove(false);
@@ -263,7 +263,7 @@ class CarrierShip extends Entity {
     }
   };
 
-  update = function(){
+  update(){
     if (!this.getData("isDead") && this.scene.player) {
       if (Phaser.Math.Distance.Between(
         this.x,
@@ -316,7 +316,7 @@ class GunShip extends Entity {
     this.state = this.states.MOVE_DOWN;
   };
 
-  onDestroy = function(){
+  onDestroy() {
     if (this.shootTimer !== undefined) {
       if (this.shootTimer) {
         this.shootTimer.remove(false);
@@ -324,7 +324,7 @@ class GunShip extends Entity {
     }
   };
 
-  update = function(){
+  update(){
     if (!this.getData("isDead") && this.scene.player) {
       if (Phaser.Math.Distance.Between(
         this.x,
@@ -377,7 +377,7 @@ class HollowShip extends Entity {
     this.state = this.states.MOVE_DOWN;
   };
 
-  onDestroy = function(){
+  onDestroy(){
     if (this.shootTimer !== undefined) {
       if (this.shootTimer) {
         this.shootTimer.remove(false);
@@ -385,7 +385,7 @@ class HollowShip extends Entity {
     }
   };
 
-  update = function(){
+  update(){
     if (!this.getData("isDead") && this.scene.player) {
       if (Phaser.Math.Distance.Between(
         this.x,
@@ -443,7 +443,7 @@ class ScrollingBackground {
     this.createLayers();
   }
 
-  createLayers = function() {
+  createLayers() {
     for (var i = 0; i < 2; i++) {
       var layer = this.scene.add.sprite(0, 0, this.key);
       layer.y = (layer.displayHeight * i);
@@ -458,7 +458,7 @@ class ScrollingBackground {
     }
   }
 
-  update = () => {
+  update() {
     if (this.layers.getChildren()[0].y > 0) {
       for (var i = 0; i < this.layers.getChildren().length; i++) {
         var layer = this.layers.getChildren()[i];
