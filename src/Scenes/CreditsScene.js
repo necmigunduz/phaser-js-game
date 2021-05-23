@@ -62,7 +62,7 @@ export default class CreditsScene extends Phaser.Scene {
       targets: this.mcText,
       y: -300,
       ease: 'Power1',
-      duration: 5000,
+      duration: 6000,
       delay: 1000,
       onComplete: function () {
         this.madeByTween.destroy;

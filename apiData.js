@@ -1,4 +1,5 @@
 import 'regenerator-runtime';
+require('dotenv').config();
 
 const apiKey = 'bFQvTZfPrvjkHOOILnoM';
 

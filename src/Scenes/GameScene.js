@@ -175,9 +175,7 @@ export default class GameScene extends Phaser.Scene {
         if (player.onDestroy !== undefined) {
           player.onDestroy();
         }
-      
         player.explode(true);
-        // enemyLaser.explode(true);
       }
     });
 

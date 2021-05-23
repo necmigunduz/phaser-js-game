@@ -194,11 +194,8 @@ class ChaserShip extends Entity {
         enemy.y > this.game.config.height + enemy.displayHeight) {
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
-            // enemy.onDestroy();
             enemy.explode();
           }
-    
-         // enemy.destroy();
         }
       }
 
@@ -230,10 +227,7 @@ class ChaserShip extends Entity {
         }
       }
     }
-  };
-
-  
-  
+  }; 
 }
 
 class CarrierShip extends Entity {
