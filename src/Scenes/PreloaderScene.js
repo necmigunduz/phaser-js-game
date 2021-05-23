@@ -120,8 +120,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('sprBtnRestartDown', sprBtnRestartDown);
     this.load.image('sprBtnRestartHover', sprBtnRestartHover);
     this.load.spritesheet('explosion', '../src/assets/explosion.png', {
-      frameWidth: 32,
-      frameHeight: 32,
+      frameWidth: 16,
+      frameHeight: 16,
     });
     this.load.audio('explosion_sound', explosion_sound);
   }
