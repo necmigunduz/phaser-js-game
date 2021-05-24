@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import logo from '../assets/logo_peacemaker.png';
 
 export default class BootScene extends Phaser.Scene {
