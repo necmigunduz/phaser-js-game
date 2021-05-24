@@ -11,9 +11,9 @@ import Model from './Model';
 import GameOverScene from './Scenes/GameOverScene';
 import { setUser } from './User/user';
 import './User/dom';
- 
+
 class Game extends Phaser.Game {
-  constructor () {
+  constructor() {
     super(config);
 
     const model = new Model();
@@ -29,7 +29,7 @@ class Game extends Phaser.Game {
     this.scene.start('Boot');
   }
 }
- 
+
 export default (user) => {
   setUser(user);
   window.game = new Game();
