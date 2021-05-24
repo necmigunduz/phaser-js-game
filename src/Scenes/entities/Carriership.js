@@ -1,19 +1,15 @@
-import Phaser from 'phaser';
-import Entity from './Entities';
-import EnemyLaser from './Enemylaser';
+import Phaser from "phaser";
+import Entity from "./Entities";
+import EnemyLaser from "./Enemylaser";
 
 export default class CarrierShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, 'enemy1', 'CarrierShip');
+    super(scene, x, y, "enemy1", "CarrierShip");
     this.body.velocity.y = Phaser.Math.Between(50, 100);
     this.shootTimer = this.scene.time.addEvent({
       delay: 2000,
       callback() {
-        const laser = new EnemyLaser(
-          this.scene,
-          this.x,
-          this.y,
-        );
+        const laser = new EnemyLaser(this.scene, this.x, this.y);
         laser.setScale(this.scaleX);
         this.scene.enemyLasers.add(laser);
       },
@@ -21,8 +17,8 @@ export default class CarrierShip extends Entity {
       loop: true,
     });
     this.states = {
-      MOVE_DOWN: 'MOVE_DOWN',
-      CHASE: 'CHASE',
+      MOVE_DOWN: "MOVE_DOWN",
+      CHASE: "CHASE",
     };
     this.state = this.states.MOVE_DOWN;
   }
@@ -36,13 +32,15 @@ export default class CarrierShip extends Entity {
   }
 
   update() {
-    if (!this.getData('isDead') && this.scene.player) {
-      if (Phaser.Math.Distance.Between(
-        this.x,
-        this.y,
-        this.scene.player.x,
-        this.scene.player.y,
-      ) < 320) {
+    if (!this.getData("isDead") && this.scene.player) {
+      if (
+        Phaser.Math.Distance.Between(
+          this.x,
+          this.y,
+          this.scene.player.x,
+          this.scene.player.y
+        ) < 320
+      ) {
         this.state = this.states.CHASE;
       }
 
@@ -53,10 +51,7 @@ export default class CarrierShip extends Entity {
         const angle = Math.atan2(dy, dx);
 
         const speed = 100;
-        this.body.setVelocity(
-          Math.cos(angle) * speed,
-          Math.sin(angle) * speed,
-        );
+        this.body.setVelocity(Math.cos(angle) * speed, Math.sin(angle) * speed);
       }
     }
   }
