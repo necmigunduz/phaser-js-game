@@ -1,6 +1,4 @@
 import 'regenerator-runtime';
-
-
 const apiKey = 'bFQvTZfPrvjkHOOILnoM';
 
 async function postData(inputName) {
