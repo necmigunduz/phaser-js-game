@@ -1,4 +1,5 @@
-import 'phaser';
+/* eslint no-underscore-dangle: 0 */
+import Phaser from 'phaser';
 import Player from './entities/Player';
 import ChaserShip from './entities/Chaserhip';
 import CarrierShip from './entities/Carriership';
@@ -210,16 +211,16 @@ export default class GameScene extends Phaser.Scene {
       this.player.setData('isShooting', false);
     }
 
-    for (let i = 0; i < this.backgrounds.length; i++) {
+    for (let i = 0; i < this.backgrounds.length; i += 1) {
       this.backgrounds[i].update();
     }
   }
 
   getEnemiesByType(type) {
     const arr = [];
-    for (let i = 0; i < this.enemies.getChildren().length; i++) {
+    for (let i = 0; i < this.enemies.getChildren().length; i += 1) {
       const enemy = this.enemies.getChildren()[i];
-      if (enemy.getData('type') == type) {
+      if (enemy.getData('type') === type) {
         arr.push(enemy);
       }
     }
