@@ -1,10 +1,11 @@
-import Phaser from "phaser";
-import Entity from "./Entities";
-import EnemyLaser from "./Enemylaser";
+/* eslint no-underscore-dangle: 0 */
+import Phaser from 'phaser';
+import Entity from './Entities';
+import EnemyLaser from './Enemylaser';
 
 export default class CarrierShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "enemy1", "CarrierShip");
+    super(scene, x, y, 'enemy1', 'CarrierShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
     this.shootTimer = this.scene.time.addEvent({
       delay: 2000,
@@ -17,8 +18,8 @@ export default class CarrierShip extends Entity {
       loop: true,
     });
     this.states = {
-      MOVE_DOWN: "MOVE_DOWN",
-      CHASE: "CHASE",
+      MOVE_DOWN: 'MOVE_DOWN',
+      CHASE: 'CHASE',
     };
     this.state = this.states.MOVE_DOWN;
   }
@@ -32,7 +33,7 @@ export default class CarrierShip extends Entity {
   }
 
   update() {
-    if (!this.getData("isDead") && this.scene.player) {
+    if (!this.getData('isDead') && this.scene.player) {
       if (
         Phaser.Math.Distance.Between(
           this.x,
