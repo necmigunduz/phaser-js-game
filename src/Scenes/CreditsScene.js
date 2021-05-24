@@ -39,7 +39,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 3000,
       delay: 1000,
       onComplete: function () {
-        this.creditsTween.destroy;
+        this.creditsTween.destroy; // eslint-disable-line no-unused-expressions
       }.bind(this),
     });
 
@@ -50,7 +50,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 5000,
       delay: 1000,
       onComplete: function () {
-        this.madeByTween.destroy;
+        this.madeByTween.destroy; // eslint-disable-line no-unused-expressions
         this.scene.start('Title');
       }.bind(this),
     });
@@ -62,7 +62,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 6000,
       delay: 1000,
       onComplete: function () {
-        this.madeByTween.destroy;
+        this.madeByTween.destroy; // eslint-disable-line no-unused-expressions
         this.scene.start('Title');
       }.bind(this),
     });
