@@ -40,7 +40,7 @@ export default class CreditsScene extends Phaser.Scene {
       delay: 1000,
       onComplete: function () {
         this.creditsTween.destroy;
-      },
+      }.bind(this),
     });
 
     this.madeByTween = this.tweens.add({
