@@ -4,11 +4,11 @@ import button03 from '../assets/ui/blue_button03.png';
 import logo from '../assets/logo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
-import bg_music from '../assets/bg-music.mp3';
-import explosion_sound from '../assets/explosion.mp3';
+import bgMusic from '../assets/bg-music.mp3';
+import explosionSound from '../assets/explosion.mp3';
 import sndBtnOver from '../assets/sndBtnOver.wav';
 import sndBtnDown from '../assets/sndBtnDown.wav';
-import bg_space from '../assets/bg_space.png';
+import bgSpace from '../assets/bgSpace.png';
 import sprBg0 from '../assets/sprBg0.png';
 import ship from '../assets/ship.png';
 import enemy from '../assets/enemy.png';
@@ -19,7 +19,6 @@ import laserShooter from '../assets/laser.png';
 import sprBtnRestart from '../assets/sprBtnRestart.png';
 import sprBtnRestartDown from '../assets/sprBtnRestartDown.png';
 import sprBtnRestartHover from '../assets/sprBtnRestartHover.png';
-import explosion from '../assets/explosion.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor() {
@@ -106,10 +105,10 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('phaserLogo', logo);
     this.load.image('box', box);
     this.load.image('checkedBox', checkedBox);
-    this.load.audio('bgMusic', [bg_music]);
+    this.load.audio('bgMusic', [bgMusic]);
     this.load.audio('sndBtnOver', [sndBtnOver]);
     this.load.audio('sndBtnDown', [sndBtnDown]);
-    this.load.image('bg_space', bg_space);
+    this.load.image('bgSpace', bgSpace);
     this.load.image('sprBg0', sprBg0);
     this.load.image('ship', ship);
     this.load.image('enemy', enemy);
@@ -124,7 +123,7 @@ export default class PreloaderScene extends Phaser.Scene {
       frameWidth: 32,
       frameHeight: 32,
     });
-    this.load.audio('explosion_sound', explosion_sound);
+    this.load.audio('explosionSound', explosionSound);
   }
 
   ready() {

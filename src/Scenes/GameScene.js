@@ -12,9 +12,6 @@ export default class GameScene extends Phaser.Scene {
     super('Game');
   }
 
-  preload() {
-  }
-
   create() {
     this.add.image(400, 300, 'bg_space');
 
@@ -26,7 +23,7 @@ export default class GameScene extends Phaser.Scene {
     };
 
     this.backgrounds = [];
-    for (let i = 0; i < 5; i++) { // create five scrolling backgrounds
+    for (let i = 0; i < 5; i += 1) { // create five scrolling backgrounds
       const bg = new ScrollingBackground(this, 'sprBg0', i * 10);
       this.backgrounds.push(bg);
     }
