@@ -49,8 +49,8 @@ async function getData() {
     if (response.ok) {
       const jsonResponse = await response.json();
       const sorteds = sortPlayers(jsonResponse.result);
-      console.log(sorteds.slice(0,10));
-      return sorteds.slice(0,10);
+      console.log(sorteds.slice(0, 10));
+      return sorteds.slice(0, 10);
     }
     throw new Error('Request Failed!');
   } catch (error) {
