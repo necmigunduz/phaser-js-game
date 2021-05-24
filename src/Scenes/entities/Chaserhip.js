@@ -32,7 +32,6 @@ export default class ChaserShip extends Entity {
   }
 
   update() {
-    var enemy;
     if (!this.getData('isDead') && this.scene.player) {
       if (
         Phaser.Math.Distance.Between(
