@@ -1,4 +1,3 @@
-/* eslint no-underscore-dangle: 0 */
 import Phaser from 'phaser';
 import Entity from './Entities';
 import EnemyLaser from './Enemylaser';
@@ -39,13 +38,13 @@ export default class CarrierShip extends Entity {
           this.x,
           this.y,
           this.scene.player.x,
-          this.scene.player.y
+          this.scene.player.y,
         ) < 320
       ) {
         this.state = this.states.CHASE;
       }
 
-      if (this.state == this.states.CHASE) {
+      if (this.state === this.states.CHASE) {
         const dx = this.scene.player.x - this.x;
         const dy = this.scene.player.y - this.y;
 
