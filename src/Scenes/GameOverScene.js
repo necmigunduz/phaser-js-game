@@ -1,13 +1,10 @@
-import 'phaser';
+import Phaser from 'phaser';
 import { postData } from '../apiData';
 import { getUser } from '../User/user';
 
 export default class BootScene extends Phaser.Scene {
   constructor() {
     super('GameOver');
-  }
-
-  preload() {
   }
 
   create() {
