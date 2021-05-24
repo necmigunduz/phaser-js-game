@@ -1,7 +1,10 @@
 import 'phaser';
-import {
-  Player, ChaserShip, CarrierShip, GunShip, HollowShip, ScrollingBackground,
-} from './Entities';
+import Player from './entities/Player';
+import ChaserShip from './entities/Chaserhip';
+import CarrierShip from './entities/Carriership';
+import GunShip from './entities/Gunship';
+import HollowShip from './entities/Hollowship';
+import ScrollingBackground from './entities/ScrollingBackground';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
