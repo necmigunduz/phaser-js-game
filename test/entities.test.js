@@ -1,14 +1,14 @@
 import 'jest-canvas-mock';
-import { Player, Entity } from '../src/Scenes/Entities';
+import Player from '../src/Scenes/entities/Player';
 
-jest.mock('../src/Scenes/Entities');
+jest.mock('../src/Scenes/entities/Entities');
 
 beforeEach(() => {
   Player.mockClear();
 });
 
 test('Creating an instance of the Player (ship), and calling class Player', () => {
-  const player = new Player('Game', 200, 150, 'ship');
+  new Player('Game', 200, 150, 'ship'); // eslint-disable-line no-new
   expect(Player).toHaveBeenCalledTimes(1);
 });
 

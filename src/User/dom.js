@@ -1,4 +1,4 @@
-import startGame from '../index';
+import startGame from '../index'; // eslint-disable-line import/no-cycle
 import { checkForm, noInputError, clearDOM } from './error';
 import '../style.css';
 
