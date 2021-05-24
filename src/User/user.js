@@ -1,4 +1,4 @@
-let user = 'Anonymous';
+let user = 'Someone';
 
 const setUser = (inputUser) => {
   user = inputUser;
