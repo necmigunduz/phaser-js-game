@@ -19,6 +19,7 @@ import laserShooter from '../assets/laser.png';
 import sprBtnRestart from '../assets/sprBtnRestart.png';
 import sprBtnRestartDown from '../assets/sprBtnRestartDown.png';
 import sprBtnRestartHover from '../assets/sprBtnRestartHover.png';
+import explosion from '../assets/explosion.png';
 
 export default class PreloaderScene extends Phaser.Scene {
   constructor () {
