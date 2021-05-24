@@ -1,10 +1,10 @@
-import Phaser from "phaser";
-import Entity from "./Entities";
-import EnemyLaser from "./Enemylaser";
+import Phaser from 'phaser';
+import Entity from './Entities';
+import EnemyLaser from './Enemylaser';
 
 export default class ChaserShip extends Entity {
   constructor(scene, x, y) {
-    super(scene, x, y, "enemy", "ChaserShip");
+    super(scene, x, y, 'enemy', 'ChaserShip');
     this.body.velocity.y = Phaser.Math.Between(50, 100);
     this.shootTimer = this.scene.time.addEvent({
       delay: 1000,
@@ -17,8 +17,8 @@ export default class ChaserShip extends Entity {
       loop: true,
     });
     this.states = {
-      MOVE_DOWN: "MOVE_DOWN",
-      CHASE: "CHASE",
+      MOVE_DOWN: 'MOVE_DOWN',
+      CHASE: 'CHASE',
     };
     this.state = this.states.MOVE_DOWN;
   }
@@ -32,19 +32,19 @@ export default class ChaserShip extends Entity {
   }
 
   update() {
-    if (!this.getData("isDead") && this.scene.player) {
+    if (!this.getData('isDead') && this.scene.player) {
       if (
         Phaser.Math.Distance.Between(
           this.x,
           this.y,
           this.scene.player.x,
-          this.scene.player.y
+          this.scene.player.y,
         ) < 320
       ) {
         this.state = this.states.CHASE;
       }
 
-      if (this.state == this.states.CHASE) {
+      if (this.state === this.states.CHASE) {
         const dx = this.scene.player.x - this.x;
         const dy = this.scene.player.y - this.y;
 
@@ -61,10 +61,10 @@ export default class ChaserShip extends Entity {
       }
 
       if (
-        enemy.x < -enemy.displayWidth ||
-        enemy.x > this.game.config.width + enemy.displayWidth ||
-        enemy.y < -enemy.displayHeight * 4 ||
-        enemy.y > this.game.config.height + enemy.displayHeight
+        enemy.x < -enemy.displayWidth 
+        || enemy.x > this.game.config.width + enemy.displayWidth 
+        || enemy.y < -enemy.displayHeight * 4 
+        || enemy.y > this.game.config.height + enemy.displayHeight
       ) {
         if (enemy) {
           if (enemy.onDestroy !== undefined) {
