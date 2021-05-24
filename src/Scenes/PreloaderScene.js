@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import button02 from '../assets/ui/blue_button02.png';
 import button03 from '../assets/ui/blue_button03.png';
 import logo from '../assets/logo.png';
@@ -8,7 +8,7 @@ import bgMusic from '../assets/bg-music.mp3';
 import explosionSound from '../assets/explosion.mp3';
 import sndBtnOver from '../assets/sndBtnOver.wav';
 import sndBtnDown from '../assets/sndBtnDown.wav';
-import bgSpace from '../assets/bgSpace.png';
+import bgSpace from '../assets/bg_space.png';
 import sprBg0 from '../assets/sprBg0.png';
 import ship from '../assets/ship.png';
 import enemy from '../assets/enemy.png';
@@ -76,8 +76,8 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // update progress bar
     this.load.on('progress', (value) => {
-      percentText.setText(`${parseInt(value * 100)}%`);
-      progressBar.clear();
+      percentText.setText(`${parseInt((value * 100), 10)}%`);
+      progressBar.clear();          
       progressBar.fillStyle(0xffffff, 1);
       progressBar.fillRect(250, 280, 300 * value, 30);
     });
