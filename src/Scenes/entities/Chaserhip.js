@@ -61,19 +61,19 @@ export default class ChaserShip extends Entity {
       }
 
       if (
-        enemy.x < -enemy.displayWidth 
-        || enemy.x > this.game.config.width + enemy.displayWidth 
-        || enemy.y < -enemy.displayHeight * 4 
-        || enemy.y > this.game.config.height + enemy.displayHeight
+        enemy.x < -enemy.displayWidth // eslint-disable-line no-undef
+        || enemy.x > this.game.config.width + enemy.displayWidth // eslint-disable-line no-undef
+        || enemy.y < -enemy.displayHeight * 4 // eslint-disable-line no-undef
+        || enemy.y > this.game.config.height + enemy.displayHeight // eslint-disable-line no-undef
       ) {
-        if (enemy) {
-          if (enemy.onDestroy !== undefined) {
-            enemy.explode();
+        if (enemy) { // eslint-disable-line no-undef
+          if (enemy.onDestroy !== undefined) { // eslint-disable-line no-undef
+            enemy.explode(); // eslint-disable-line no-undef
           }
         }
       }
 
-      for (var i = 0; i < this.enemyLasers.getChildren().length; i++) {
+      for (var i = 0; i < this.enemyLasers.getChildren().length; i++) { 
         var laser = this.enemyLasers.getChildren()[i];
         laser.update();
 
