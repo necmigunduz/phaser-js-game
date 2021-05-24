@@ -39,7 +39,7 @@ export default class CreditsScene extends Phaser.Scene {
       duration: 3000,
       delay: 1000,
       onComplete: function () {
-        this.destroy;
+        this.creditsTween.destroy;
       },
     });
 
