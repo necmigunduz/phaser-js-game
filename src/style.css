@@ -1,0 +1,67 @@
+body {
+  background-image: url('./assets/bg_start.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2 {
+  color: #0fbcf9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto 0;
+}
+
+.input-text {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.input {
+  margin: 5px 0 10px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid#0fbcf9;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.submit {
+  background-color: #0fbcf9;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+.submit:hover {
+  color: #0fbcf9;
+  background-color: white;
+  cursor: pointer;
+}
+
+.submit:focus {
+  outline: none;
+  border-color: #553307;
+}
