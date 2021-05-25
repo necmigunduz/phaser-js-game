@@ -31,6 +31,7 @@ export default class Player extends Entity {
   }
 
   updateScore(enemy) {
+    localStorage.clear();
     if (enemy.getData('type') === 'CarrierShip') {
       this.setData('score', this.getData('score') + 25);
     } else if (enemy.getData('type') === 'GunShip') {

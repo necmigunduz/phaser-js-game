@@ -24,7 +24,7 @@ export default class BootScene extends Phaser.Scene {
     this.score = this.add.text(
       this.game.config.width * 0.38,
       450,
-      `${getUser(user)}' score is: ${localStorage.getItem('score')}`,
+      `${getUser(user)}'s score is: ${localStorage.getItem('score')}`,
       {
         fontFamily: 'monospace',
         fontSize: 20,
