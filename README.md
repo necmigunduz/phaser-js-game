@@ -20,6 +20,49 @@ Project Link: [Javascript-Capstone](https://github.com/necmigunduz/phaser-js-gam
 
 This is a never-ending game. User faces different alien ships at random times. User uses laser (Space) to shoot and explode enemy ships. Every different enemy ship shot adds a differnet point to the user's score. When the user's ship is shot by an enemy laser, or an enemy ship touches the user's ship, the game ends. The user can restart the game. Also, users' high scores are stored in an API, and users can display the highest ten scores in the scoreboard scene.
 
+### Game design
+
+The game uses one laser sprite, one user ship, four enemy ships, and two backgrounds. Two backgrounds are displayed on each other to create a more interesting background and higher contrast. The user ship is black and white to have a high contrast with the background. The enemy ships have fantastic desings, and they are relatively more colored to create a confusion with the dark background with low contrast. There is a background music, and an explosion sound in the game. 
+
+# Background Images
+- First Background:
+
+![Screenshot](src/assets/bg_space.png)
+
+- Second Background:
+
+![Screenshot](src/assets/sprBg0.png)
+
+# User Ship
+
+![Screenshot](src/assets/ship.png)
+
+# Enemy ships
+- Chaser Ship
+
+![Screenshot](src/assets/enemy.png)
+
+- Carrier Ship
+
+![Screenshot](src/assets/enemy1.png)
+
+- Gun Ship
+
+![Screenshot](src/assets/enemy2.png)
+
+- Hollow Ship
+
+![Screenshot](src/assets/enemy3.png)
+
+# Laser
+
+![Screenshot](src/assets/laser.png)
+
+# Explosion Sprite
+
+![Screenshot](src/assets/explosion.png)
+
+
 ### How to Play
 
 - Input your name on the first page and click the submit button, There is a menu on the next page which are Play, Options, Credits and Scoreboard. You can disable the sound in the options menu. Click on the play menu to start your game. You can move around the screen using W, S, D, and A keys and use the Space Bar to shoot whenever you see an enemy.
