@@ -46,7 +46,7 @@ export default class CarrierShip extends Entity {
         this.state = this.states.CHASE;
       }
 
-      if (this.state == this.states.CHASE) { // eslint-disable-line eqeqeq
+      if (this.state === this.states.CHASE) {
         const dx = this.scene.player.x - this.x;
         const dy = this.scene.player.y - this.y;
 

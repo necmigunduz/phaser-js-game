@@ -17,6 +17,10 @@ export default class BootScene extends Phaser.Scene {
     });
     this.title.setOrigin(0.5);
 
+    const user = getUser();
+
+    postData(user);
+
     this.score = this.add.text(
       this.game.config.width * 0.38,
       450,
@@ -56,9 +60,5 @@ export default class BootScene extends Phaser.Scene {
       this.btnRestart.setTexture('sprBtnRestart');
       this.scene.start('Title');
     }, this);
-
-    const user = getUser();
-
-    postData(user);
   }
 }

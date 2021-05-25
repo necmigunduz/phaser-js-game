@@ -18,7 +18,6 @@ describe('Tests for initalizing a new game on Score API', () => {
       expect(typeof data.result).not.toBe('integer');
     });
   });
-
 });
 
 describe('Tests for sending a POST request to the Score API', () => {
