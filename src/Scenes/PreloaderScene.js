@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 import box from '../assets/ui/grey_box.png';
 import checkedBox from '../assets/ui/blue_boxCheckmark.png';
 import bgMusic from '../assets/bg-music.mp3';
+import bgMusicII from '../assets/bgMusicII.mp3';
 import explosionSound from '../assets/explosion.mp3';
 import sndBtnOver from '../assets/sndBtnOver.wav';
 import sndBtnDown from '../assets/sndBtnDown.wav';
@@ -106,6 +107,7 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('box', box);
     this.load.image('checkedBox', checkedBox);
     this.load.audio('bgMusic', [bgMusic]);
+    this.load.audio('bgMusicII', [bgMusicII]);
     this.load.audio('sndBtnOver', [sndBtnOver]);
     this.load.audio('sndBtnDown', [sndBtnDown]);
     this.load.image('bgSpace', bgSpace);

@@ -8,12 +8,33 @@ body {
   align-items: center;
 }
 
-h1,
+.header-front {
+  color: #fcfcfc;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  border: 20px solid rgb(36, 75, 87);
+  border-radius: 25%;
+  padding: 50px;
+  background-color: black;
+  opacity: 70%;
+  transition: all 0.3s ease-out;
+}
+
+.header-front:hover {
+  color: #ffffff;
+  background-color: #097583;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 45px;
+  font-weight: 900;
+  border: 20px solid rgb(9, 39, 49);
+}
+
 h2 {
-  color: #0fbcf9;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  font-weight: 700;
+  color: #e1f14d;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 45px;
+  font-weight: 900;
   margin-top: 10px;
 }
 
@@ -26,10 +47,10 @@ h2 {
 }
 
 .input-text {
-  margin-bottom: 20px;
+  margin-bottom: 2px;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
+  color: rgb(247, 236, 178);
 }
 
 .input {
@@ -47,11 +68,11 @@ h2 {
 .submit {
   background-color: #0fbcf9;
   color: white;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 600;
   padding: 5px 0;
-  border: 1px solid white;
-  border-radius: 5px;
+  border: 5px solid white;
+  border-radius: 50px;
   transition: all 0.3s ease-out;
 }
 
@@ -59,6 +80,8 @@ h2 {
   color: #0fbcf9;
   background-color: white;
   cursor: pointer;
+  border: 5px solid #0fbcf9;
+  border-radius: 50px;
 }
 
 .submit:focus {

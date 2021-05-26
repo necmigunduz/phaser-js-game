@@ -33,20 +33,20 @@
     "jest": "^26.6.3",
     "jest-canvas-mock": "^2.3.1",
     "raw-loader": "^3.1.0",
+    "webpack": "^4.32.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.5.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "clean-webpack-plugin": "^3.0.0",
     "dotenv": "^10.0.0",
+    "html-webpack-plugin": "^3.2.0",
     "node-fetch": "^2.6.1",
     "phaser": "^3.50.0",
-    "terser-webpack-plugin": "^2.3.8",
     "regenerator-runtime": "^0.13.7",
-    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^2.0.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "webpack": "^4.46.0",
+    "terser-webpack-plugin": "^2.3.8",
     "webpack-merge": "^4.2.2"
   },
   "engines": {

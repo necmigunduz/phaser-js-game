@@ -10,11 +10,12 @@ const submit = document.createElement('button');
 
 inputWrap.classList.add('input-wrap');
 text.classList.add('input-text');
+text1.classList.add('header-front');
 input.classList.add('input');
 submit.classList.add('submit');
 
 text1.innerHTML = 'SPACE ADVENTURE';
-text.innerHTML = 'Enter your name';
+text.innerHTML = 'Enter your name below';
 input.placeholder = 'Name...';
 submit.innerHTML = 'Start';
 
